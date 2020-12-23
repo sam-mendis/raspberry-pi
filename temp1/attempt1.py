@@ -5,17 +5,26 @@ from tkinter import *
 
 
 # For the resetting
-# for the time par
+# for the time part
 import time
 import os
 import sys
 
 # Importing Functions in functions.py
 from functions import restart_program
-from functions import model_temp
+
+from functions import v_measure
+from functions import temp_control
+from functions import temp_model
+from functions import t_measure
+from functions import start
+
+
 # For the resetting
 # for the time part
 
+# Assuming voltage heat correlation is a linear model with m=50 and c = -30
+# This model assumes atm = 20 and Vmeasured = 1 at Tatm
 
 # need to have this before any tkinter program.
 # this creates the window for the gui
@@ -29,15 +38,10 @@ root.title("Environmental Controller for Test Cell")
 
 # Atmospheric Temperature
 atm = 20
-# Resistance at atmospheric temp
-Ratm = 100
 
-# Resistance at max temp
-Rmax = 300
 
-# Voltage to make 120 deg C
-Vmax = 30
-Vout = 0
+# Voltage at 120 deg C = 3V
+# Voltage at 20 deg C = 1V
 
 
 frame_s = Frame(root)
@@ -86,25 +90,7 @@ e_gas2.grid(row=3, column=5)
 # remember when using the command button not to but brackets after the function
 
 
-def start(temp, seconds, gasa, atm):
-
-    t_end = time.time()+seconds
-    T = atm
-    while time.time() < t_end:
-        if T > temp:
-            Vout = 0
-        else:
-            Vout = (temp-T)*(0.3)
-            T_m = T+Vout*(30)-(T-atm)*(10)
-
-            T = model_temp(T_m)
-            T1 = str(T)
-
-            # current_temp = Label(
-            # frame_n, text="Current Temp of Substrate = "+T1+"\N{DEGREE SIGN}C")
-            #current_temp.grid(row=5, column=3)
-            print(T1)
-            time.sleep(2)
+# Here
 
 
 def next():
@@ -142,8 +128,9 @@ def next():
     # Creating a restart if statement if Gas A + Gas B doesnt = 100%
     if temp_int < atm or temp_int > 120:
         frame_s.destroy()
+        atm1 = str(atm)
         error_t = Label(
-            frame_n, text="Temperature is not within" + atm + "\N{DEGREE SIGN}C to 120\N{DEGREE SIGN}C")
+            frame_n, text="Temperature is not within " + atm1 + "\N{DEGREE SIGN}C to 120\N{DEGREE SIGN}C")
         error_t.pack()
         restart = Button(frame_n, text="Restart", command=restart_program)
         restart.pack()
@@ -167,9 +154,9 @@ def next():
     f_gaslabel.grid(row=2, column=3)
 
     # Creating Start button
-    button_start = Button(frame_n, text="Start",
-                          command=start(temp_int, time_s, gasa_int, atm))
-    button_start.grid(row=2, column=4)
+    button_start = Button(frame_n, text="Start", command=lambda: start(
+        temp_int, time_s, gasa_int, atm))
+    button_start.grid(row=3, column=4)
 
     # Creating a Clear Button
     button_clear = Button(frame_n, text="Clear", command=restart_program)
@@ -179,5 +166,6 @@ def next():
 # creating a labels
 button_next = Button(frame_s, text="Next", command=next)
 button_next.grid(row=3, column=6)
+
 
 root.mainloop()
