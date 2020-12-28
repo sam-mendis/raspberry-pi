@@ -19,6 +19,7 @@ from functions import temp_model
 from functions import t_measure
 from functions import start
 
+from array import *
 
 # For the resetting
 # for the time part
