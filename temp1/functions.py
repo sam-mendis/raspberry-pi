@@ -9,6 +9,9 @@ from random import seed
 from random import randint
 
 
+from array import *
+
+
 # Temperature modeling for feedback
 def model_temp(T):
     global temp_f
@@ -58,6 +61,7 @@ def start(temp, seconds, gasa, atm):
     current_temp = atm
     t_end = time.time() + seconds
     T2 = atm
+    count = 0
     print(T2)
     print(t_end)
     while time.time() < t_end:
@@ -66,5 +70,11 @@ def start(temp, seconds, gasa, atm):
         V2 = t_measure(T1)
         T2 = v_measure(V2)
         current_temp = round(T2, 2)
+        count = count + 1
+
+        #temp_store = list(20)
+        #temp_store.insert(0, current_temp)
         print(current_temp)
         time.sleep(3)
+    # temp_store.reverse()
+    # print(temp_store)
