@@ -65,6 +65,6 @@ def start(temp, seconds, gasa, atm):
         T1 = temp_model(V1, T2)
         V2 = t_measure(T1)
         T2 = v_measure(V2)
-        current_temp = T2
+        current_temp = round(T2, 2)
         print(current_temp)
         time.sleep(3)
