@@ -19,7 +19,7 @@ from functions import temp_model
 from functions import t_measure
 from functions import start
 
-from array import *
+import array
 
 # For the resetting
 # for the time part
@@ -102,7 +102,7 @@ def next():
     timeh_int = int(e_timeh.get())
     timem_int = int(e_timem.get())
 
-    time_s = timed_int*(86400)+timeh_int*(3600)+timem_int*(60)
+    time_s = timed_int*(86400)+timeh_int*(3600)+timem_int*(1)
     print(time_s)
     gasa_int = int(e_gas1.get())
     gasb_int = int(e_gas2.get())
