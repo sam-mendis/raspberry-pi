@@ -53,8 +53,27 @@ def t_measure(Tout):
     return voltage
 
 
-def cells_measure():
-    'fdsf'
+def cells_measure(Time):
+    Cell_1 = []
+    Cell_2 = []
+    Cell_3 = []
+    Cell_4 = []
+    Cell_5 = []
+    Cell_6 = []
+
+    if Time < 3600:
+        TT = 6
+
+        ''' '''
+
+    if 3600 <= Time < (5*86400):
+        TT = 30
+
+    if (5*86400) <= Time < 10*(86400):
+        TT = 60
+
+    if (10*86400) <= Time:
+        TT = 120
 
 
 def start(temp, seconds, gasa, atm):
