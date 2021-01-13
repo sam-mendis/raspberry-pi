@@ -227,9 +227,5 @@ def easy_next(T, D, H, M, S, A, B):
         temp_int, time_s, gasa_int, atm))
     button_start.grid(row=3, column=4)
 
-    # Creating a Clear Button
-    button_clear = Button(frame_n, text="Clear", command=restart_program)
-    button_clear.grid(row=1, column=4)
-
 
 root.mainloop()
