@@ -53,6 +53,10 @@ def t_measure(Tout):
     return voltage
 
 
+def cells_measure():
+    'fdsf'
+
+
 def start(temp, seconds, gasa, atm):
 
     current_temp = atm
@@ -61,18 +65,18 @@ def start(temp, seconds, gasa, atm):
     count = 0
     print(T2)
     t1 = int(seconds/3)
-    T_a = []
+    global T_a
+    T_a = [atm]
     print(t_end)
     while time.time() < t_end:
         V1 = temp_control(temp, T2)
         T1 = temp_model(V1, T2)
         V2 = t_measure(T1)
         T2 = v_measure(V2)
-        current_temp = str(round(T2, 2))
+        current_temp = str(round(T2, 1))
         count = count + 1
         t_print = str(count*3)
         T_a.append(current_temp)
         print("Temp at Time " + t_print + "s = " + current_temp)
 
         time.sleep(3)
-    print(T_a)
