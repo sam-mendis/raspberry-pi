@@ -54,17 +54,36 @@ def t_measure(Tout):
 
 
 def cells_measure(Time):
+    # Set GPIO's to whatever state they need to be
     Cell_1 = []
     Cell_2 = []
     Cell_3 = []
     Cell_4 = []
     Cell_5 = []
     Cell_6 = []
-
+    t0 = time.time()
+    t_end = time.time() + Time
     if Time < 3600:
-        TT = 6
+        while time.time < t_end:
+            TT = 6
+            if x < y:
+                ''' Cell 1 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 1 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
 
-        ''' '''
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_1.append((A1+A2+A3)/3)
+                # switch of gpio zero
 
     if 3600 <= Time < (5*86400):
         TT = 30
