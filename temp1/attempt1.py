@@ -9,7 +9,7 @@ from tkinter import *
 import time
 import os
 import sys
-
+import numpy as np
 # Importing Functions in functions.py
 from functions import restart_program
 

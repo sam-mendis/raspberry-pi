@@ -4,11 +4,9 @@ import sys
 import os
 # for the time part
 import time
-
+import numpy as np
 from random import seed
 from random import randint
-
-import array
 
 
 # Temperature modeling for feedback
@@ -62,6 +60,8 @@ def start(temp, seconds, gasa, atm):
     T2 = atm
     count = 0
     print(T2)
+    t1 = int(seconds/3)
+    T_a = []
     print(t_end)
     while time.time() < t_end:
         V1 = temp_control(temp, T2)
@@ -71,5 +71,8 @@ def start(temp, seconds, gasa, atm):
         current_temp = str(round(T2, 2))
         count = count + 1
         t_print = str(count*3)
+        T_a.append(current_temp)
         print("Temp at Time " + t_print + "s = " + current_temp)
+
         time.sleep(3)
+    print(T_a)
