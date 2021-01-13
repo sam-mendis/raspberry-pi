@@ -1,5 +1,6 @@
 from random import randint
 from random import seed
+from datetime import datetime
 # For the GUI
 from tkinter import *
 
@@ -9,7 +10,8 @@ from tkinter import *
 import time
 import os
 import sys
-import numpy as np
+import json
+import array
 # Importing Functions in functions.py
 from functions import restart_program
 
@@ -19,10 +21,6 @@ from functions import temp_model
 from functions import t_measure
 from functions import start
 
-import array
-
-# For the resetting
-# for the time part
 
 # Assuming voltage heat correlation is a linear model with m=50 and c = -30
 # This model assumes atm = 20 and Vmeasured = 1 at Tatm
@@ -31,6 +29,10 @@ import array
 # this creates the window for the gui
 root = Tk()
 
+"""Sorting out Time and Date"""  # A fun way of writing a multi line comment, it isnt actually a comment but a string that is never accessed
+date_time = datetime.now()
+Date = '%s/%s/%s' % (date_time.day, date_time.month, date_time.year)
+Time = '%s:%s:%s' % (date_time.hour, date_time.minute, date_time.second)
 
 # Naming the Gui
 root.title("Environmental Controller for Test Cell")
@@ -39,6 +41,7 @@ root.title("Environmental Controller for Test Cell")
 
 # Atmospheric Temperature
 atm = 20
+temp_a = [atm]
 
 
 # Voltage at 120 deg C = 3V
@@ -86,6 +89,10 @@ e_gas1 = Entry(frame_s, bd=1, relief="solid", font=" Times 14", width=7)
 e_gas1.grid(row=3, column=4)
 e_gas2 = Entry(frame_s, bd=1, relief="solid", font=" Times 14", width=7)
 e_gas2.grid(row=3, column=5)
+
+b_easy = Button(frame_s, text="Test",
+                command=lambda: easy_next(100, 0, 0, 0, 30, 100, 0))
+b_easy.grid(row=4, column=5)
 
 # Creating a button, command calls the function next to command
 # remember when using the command button not to but brackets after the function
@@ -167,6 +174,62 @@ def next():
 # creating a labels
 button_next = Button(frame_s, text="Next", command=next)
 button_next.grid(row=3, column=6)
+
+
+def easy_next(T, D, H, M, S, A, B):
+    global temp_i, timed_i, timeh_i, timem_i, gasa_i, gasb_i
+    temp_int = T
+
+    timed_int = D
+    timeh_int = H
+    timem_int = M
+    times_int = S
+
+    time_s = timed_int*(86400)+timeh_int*(3600)+timem_int*(60)+times_int
+    print(time_s)
+    gasa_int = A
+    gasb_int = B
+
+    temp_i = str(T)
+    timed_i = str(D)
+    timeh_i = str(H)
+    timem_i = str(M)
+    gasa_i = str(A)
+    gasb_i = str(B)
+
+    frame_n = Frame(root)
+    frame_n.grid()
+
+    # Creating a restart if statement if Gas A + Gas B doesnt = 100%
+
+    # Creating a restart if statement if Gas A + Gas B doesnt = 100%
+
+    templ = Label(frame_n, text="Temperature for Test")
+    timel = Label(frame_n, text="Time for Test")
+    gasl = Label(frame_n, text="Gas % s")
+    tempinput = "Steady State Temp = " + temp_i + "\N{DEGREE SIGN}C"
+    timeinput = timed_i + " Days " + timeh_i +\
+        "H " + timem_i + "min"
+    gasainput = "Gas A = " + gasa_i + "%, Gas B = " + gasb_i + "%"
+    f_templabel = Label(frame_n, text=tempinput)
+    f_timelabel = Label(frame_n, text=timeinput)
+    f_gaslabel = Label(frame_n, text=gasainput)
+    frame_s.destroy()
+    templ.grid(row=1, column=1)
+    timel.grid(row=1, column=2)
+    gasl.grid(row=1, column=3)
+    f_templabel.grid(row=2, column=1)
+    f_timelabel.grid(row=2, column=2)
+    f_gaslabel.grid(row=2, column=3)
+
+    # Creating Start button
+    button_start = Button(frame_n, text="Start", command=lambda: start(
+        temp_int, time_s, gasa_int, atm))
+    button_start.grid(row=3, column=4)
+
+    # Creating a Clear Button
+    button_clear = Button(frame_n, text="Clear", command=restart_program)
+    button_clear.grid(row=1, column=4)
 
 
 root.mainloop()
