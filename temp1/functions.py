@@ -56,6 +56,7 @@ def t_measure(Tout):
 
 
 def cells_measure(Time):
+    # Remeber time is in seconds!
     # Set GPIO's to whatever state they need to be
     Cell_1 = []
     Cell_2 = []
@@ -67,7 +68,7 @@ def cells_measure(Time):
     t_end = time.time() + Time
     if Time < 3600:
         while time.time < t_end:
-            TT = 6
+            TT = 6  # every 6 minutes we want the thing to run again
             if x < y:
                 ''' Cell 1 '''
                 time.sleep(5)
