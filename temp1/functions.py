@@ -69,7 +69,9 @@ def cells_measure(Time):
     if Time < 3600:
         while time.time < t_end:
             TT = 6  # every 6 minutes we want the thing to run again
-            if x < y:
+            running = (time.time-t0)/60
+            count = running % TT
+            if count == 0:
                 ''' Cell 1 '''
                 time.sleep(5)
                 # change gpio output
@@ -88,6 +90,98 @@ def cells_measure(Time):
                 Cell_1.append((A1+A2+A3)/3)
                 # switch of gpio zero
 
+            if count == 1:
+                ''' Cell 2 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 2 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
+
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_2.append((A1+A2+A3)/3)
+                # switch of gpio zero
+            if count == 2:
+                ''' Cell 3 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 3 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
+
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_3.append((A1+A2+A3)/3)
+                # switch of gpio zero
+            if count == 3:
+                ''' Cell 4 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 4 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
+
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_4.append((A1+A2+A3)/3)
+                # switch of gpio zero
+            if count == 4:
+                ''' Cell 5 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 5 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
+
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_5.append((A1+A2+A3)/3)
+                # switch of gpio zero
+
+            if count == 5:
+                ''' Cell 6 '''
+                time.sleep(5)
+                # change gpio output
+                print("changing gpio for cell 6 output")
+                time.sleep(20)
+                # measure voltage and current 1
+                A1 = 0.3
+
+                time.sleep(5)
+                # measure voltage and current 2
+                A2 = 0.3
+                time.sleep(5)
+                # measure voltage and current 3
+                A3 = 0.3
+
+                Cell_6.append((A1+A2+A3)/3)
+                # switch of gpio zero
+
     if 3600 <= Time < (5*86400):
         TT = 30
 
@@ -96,6 +190,7 @@ def cells_measure(Time):
 
     if (10*86400) <= Time:
         TT = 120
+    print(Cell_1)
 
 
 def start(temp, seconds, gasa, atm):
@@ -108,6 +203,7 @@ def start(temp, seconds, gasa, atm):
     t1 = int(seconds/3)
     global T_a
     T_a = [atm]
+    cells_measure(seconds)
     print(t_end)
     while time.time() < t_end:
         V1 = temp_control(temp, T2)
