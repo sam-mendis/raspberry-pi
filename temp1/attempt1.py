@@ -3,7 +3,6 @@ from random import seed
 from datetime import datetime
 # For the GUI
 from tkinter import *
-import ray
 
 
 # For the resetting

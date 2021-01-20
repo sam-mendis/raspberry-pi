@@ -203,7 +203,7 @@ def start(temp, seconds, gasa, atm):
     t1 = int(seconds/3)
     global T_a
     T_a = [atm]
-    cells_measure(seconds)
+
     print(t_end)
     while time.time() < t_end:
         V1 = temp_control(temp, T2)
