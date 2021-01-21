@@ -9,6 +9,8 @@ import time
 import numpy as np
 from random import seed
 from random import randint
+from multiprocessing import Process
+import multiprocessing as mp
 
 
 # Temperature modeling for feedback
@@ -55,7 +57,7 @@ def t_measure(Tout):
     return voltage
 
 
-def cells_measure(Time):
+def cells_measure(Time, t_end):
     # Remeber time is in seconds!
     # Set GPIO's to whatever state they need to be
     Cell_1 = []
@@ -65,11 +67,11 @@ def cells_measure(Time):
     Cell_5 = []
     Cell_6 = []
     t0 = time.time()
-    t_end = time.time() + Time
+    print('Working')
     if Time < 3600:
-        while time.time < t_end:
+        while time.time() < t_end:
             TT = 6  # every 6 minutes we want the thing to run again
-            running = (time.time-t0)/60
+            running = (time.time()-t0)/60
             count = running % TT
             if count == 0:
                 ''' Cell 1 '''
@@ -190,7 +192,23 @@ def cells_measure(Time):
 
     if (10*86400) <= Time:
         TT = 120
-    print(Cell_1)
+    print(Cell_2)
+
+
+def t_control(temp, T2, t_end, count):
+    while time.time() < t_end:
+        V1 = temp_control(temp, T2)
+        T1 = temp_model(V1, T2)
+        V2 = t_measure(T1)
+        T2 = v_measure(V2)
+        current_temp = str(round(T2, 1))
+        count = count + 1
+        t_print = str(count*3)
+        T_a.append(current_temp)
+        print("Temp at Time " + t_print + "s = " + current_temp)
+
+        time.sleep(3)
+    print(T_a)
 
 
 def start(temp, seconds, gasa, atm):
@@ -205,15 +223,12 @@ def start(temp, seconds, gasa, atm):
     T_a = [atm]
 
     print(t_end)
-    while time.time() < t_end:
-        V1 = temp_control(temp, T2)
-        T1 = temp_model(V1, T2)
-        V2 = t_measure(T1)
-        T2 = v_measure(V2)
-        current_temp = str(round(T2, 1))
-        count = count + 1
-        t_print = str(count*3)
-        T_a.append(current_temp)
-        print("Temp at Time " + t_print + "s = " + current_temp)
-
-        time.sleep(3)
+    #a = t_control(temp, T2, t_end, count)
+    # print(a)
+    if __name__ == 'functions':
+        p1 = Process(target=t_control(temp, T2, t_end, count))
+        p1.start()
+        p2 = Process(target=cells_measure(seconds, t_end))
+        p2.start()
+        p1.join()
+        p2.join()
