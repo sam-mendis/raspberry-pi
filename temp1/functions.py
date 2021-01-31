@@ -6,7 +6,6 @@ import json
 import csv
 # for the time part
 import time
-import numpy as np
 from random import seed
 from random import randint
 from multiprocessing import Process
