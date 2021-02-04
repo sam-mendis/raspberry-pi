@@ -4,6 +4,7 @@ from datetime import datetime
 # For the GUI
 from tkinter import *
 from multiprocessing import Process
+
 # from temperature_sensor_code import *
 
 # For the resetting
@@ -82,6 +83,16 @@ def read_temp():
 def desired_temp():
     return 120
 
+
+# The function to measure the voltage
+def measure_volts():
+    return 0.1
+
+
+def set_volts(Input):
+    'The function to set the keythlay voltages to what I want'
+    print(Input)
+
 # The Temperature controller which will run inside the function control
 
 
@@ -101,9 +112,9 @@ def temp_control(Temp):
 # Building the Controller that will run the entire system. The inputs are the classes Temp,time,gas and voltage.
 
 
-def control(Temp, Time, Gas, Voltage):
+def control():
     t0 = time.time()
-    Tend = time.time()+Time.desired
+    Tend = time.time()+t.desired
     Temperature = [[Date, Current_Time], [
         'Time in seconds/s', 'Temperature/deg C'], [0, 20]]
     Cells_V = [[Date, Current_Time], [
@@ -112,8 +123,8 @@ def control(Temp, Time, Gas, Voltage):
 
     # This while loop is where all the control neeeds to be done, includig gas and voltage control
     while time.time() < Tend:
-        Time.actualv(round((time.time()-t0), 2))
-        Temperature.append([Time.actual, temp_control(Temp)])
+        current_time = (round((time.time()-t0), 2))
+        Temperature.append([current_time, temp_control(T)])
 
         if (time.time()-t0) < ((Tend-t0)/5):
             time.sleep(0.1)
@@ -127,10 +138,28 @@ def control(Temp, Time, Gas, Voltage):
         write.writerows(Temperature)
 
     print(Temperature)
-    end = Time.desired + t0
+    end = t.desired + t0
 
 
-control(T, t, g, V)
+# A fucntion to check the ultiprocessing module is working fine
+def counter():
+    t = 0
+    while t < 5:
+        print(t)
+        t = t+1
+        time.sleep(1)
+    print('End counter')
+
+
+# For multiprocessing to work, the functions I am calling can not have input arguments
+if __name__ == '__main__':
+    p1 = Process(target=control)
+    p1.start()
+    p2 = Process(target=counter)
+    p2.start()
+    p1.join()
+    p2.join()
+
 
 # def controller1(fuck):
 # fuck.values(35)
