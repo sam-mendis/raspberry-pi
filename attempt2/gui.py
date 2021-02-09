@@ -10,6 +10,7 @@ from multiprocessing import Process
 # For the resetting
 # for the time part
 import time
+import math  # for creating time varying voltage and temperature maps
 # For DS18B20
 import glob
 import gpiozero
@@ -60,15 +61,14 @@ class parameters:
 # Assuming only working with 2 gases
 A = parameters("Atmospheric Temperature")
 
-'''A.values(25)
-A.actualv(35)
-A.desiredv(40)'''
-
 T = parameters("Desired Temperature")
 t = parameters('time in seconds')
 g = parameters("Gas 1 Percentage")
 V = parameters("Voltage to hold cells at")
-t.desiredv(10)
+I = parameters(
+    "Time intervals where measurements are taking place defined by in hours")
+I.desiredv([15, 30, 45, 60])
+t.desiredv(5)
 '''print(A.value)
 print(A.actual)
 print(A.desired)'''
@@ -102,7 +102,7 @@ def temp_control(Temp):
 
     if Temp.actual < Temp.desired:
         "switch on Heater by closing SSR"
-        print('heater on')
+        print('heater on(Switching GPIO 6 on)/or leaving on')
         # Switching GPIO 6 on
     else:
         '''switch off heater'''
@@ -112,24 +112,54 @@ def temp_control(Temp):
 # Building the Controller that will run the entire system. The inputs are the classes Temp,time,gas and voltage.
 
 
-def control():
+def control_T():
+    n = 0
     t0 = time.time()
-    Tend = time.time()+t.desired
+    Tend1 = t0+I.desired[0]
+    Tend2 = t0+I.desired[1]+I.desired[0]
+    Tend3 = t0+I.desired[2] + I.desired[1]+I.desired[0]
+    Tend4 = t0+I.desired[3]+I.desired[2] + I.desired[1]+I.desired[0]
+    t1 = 0
+
     Temperature = [[Date, Current_Time], [
         'Time in seconds/s', 'Temperature/deg C'], [0, 20]]
     Cells_V = [[Date, Current_Time], [
         'Time in seconds/s', 'Cell 1 Voltage/V', 'Cell 2 Voltage/V', 'Cell 3 Voltage/V', 'Cell 4 Voltage/V', 'Cell 5 Voltage/V', 'Cell 6 Voltage/V'], [0, 0, 0, 0, 0, 0, 0]]
-    time.sleep(1)
 
     # This while loop is where all the control neeeds to be done, includig gas and voltage control
-    while time.time() < Tend:
+    while time.time() < Tend1:
+
         current_time = (round((time.time()-t0), 2))
         Temperature.append([current_time, temp_control(T)])
+        t1 = t1+1
+        pause_time = (t1*(0.5)+t0)-time.time()
+        time.sleep(pause_time)
 
-        if (time.time()-t0) < ((Tend-t0)/5):
-            time.sleep(0.1)
-        else:
-            time.sleep(1)
+    t1 = 0
+    while Tend1 < time.time() < Tend2:
+        print(time.time())
+        current_time = (round((time.time()-t0), 2))
+        Temperature.append([current_time, temp_control(T)])
+        # This counter insures that the time is not getting out of sync in the different functions due to time taken for tasks to run
+        t1 = t1+1
+        pause_time = (t1*(1)+Tend1)-time.time()
+        time.sleep(pause_time)
+
+    t1 = 0
+    while Tend2 < time.time() < Tend3:
+        current_time = (round((time.time()-t0), 2))
+        Temperature.append([current_time, temp_control(T)])
+        t1 = t1+1
+        pause_time = (t1*(5)+Tend2)-time.time()
+        time.sleep(pause_time)
+    t1 = 0
+
+    while Tend3 < time.time() < Tend4:
+        current_time = (round((time.time()-t0), 2))
+        Temperature.append([current_time, temp_control(T)])
+        t1 = t1+1
+        pause_time = (t1*(10)+Tend3)-time.time()
+        time.sleep(pause_time)
 
     file = open('Temperature_data.csv', 'a+', newline='')
 
@@ -142,20 +172,21 @@ def control():
 
 
 # A fucntion to check the ultiprocessing module is working fine
-def counter():
+def counter_V():
+    t0 = time.time()
     t = 0
-    while t < 5:
+    while t < (I.desired[3]+I.desired[2] + I.desired[1]+I.desired[0]):
         print(t)
         t = t+1
-        time.sleep(1)
-    print('End counter')
+        pause_time = (t+t0)-time.time()
+        time.sleep(pause_time)
 
 
 # For multiprocessing to work, the functions I am calling can not have input arguments
 if __name__ == '__main__':
-    p1 = Process(target=control)
+    p1 = Process(target=control_T)
     p1.start()
-    p2 = Process(target=counter)
+    p2 = Process(target=counter_V)
     p2.start()
     p1.join()
     p2.join()

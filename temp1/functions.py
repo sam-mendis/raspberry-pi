@@ -5,6 +5,7 @@ import os
 import json
 import csv
 # for the time part
+from tkinter import *
 import time
 from random import seed
 from random import randint
@@ -13,6 +14,8 @@ import multiprocessing as mp
 
 
 # Temperature modeling for feedback
+
+
 def model_temp(T):
     global temp_f
     temp_f = T/(0.9)
@@ -220,14 +223,7 @@ def start(temp, seconds, gasa, atm):
     t1 = int(seconds/3)
     global T_a
     T_a = [atm]
-
     print(t_end)
     #a = t_control(temp, T2, t_end, count)
     # print(a)
-    if __name__ == 'functions':
-        p1 = Process(target=t_control(temp, T2, t_end, count))
-        p1.start()
-        p2 = Process(target=cells_measure(seconds, t_end))
-        p2.start()
-        p1.join()
-        p2.join()
+    t_control(temp, T2, t_end, count)

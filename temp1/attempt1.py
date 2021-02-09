@@ -19,7 +19,7 @@ from functions import restart_program
 from functions import v_measure
 from functions import temp_control
 from functions import temp_model
-from functions import t_measure
+from functions import t_conrol
 from functions import start
 
 
@@ -172,9 +172,29 @@ def next():
     button_clear.grid(row=1, column=4)
 
 
+def edit():
+    print("it works")
+
+
 # creating a labels
 button_next = Button(frame_s, text="Next", command=next)
 button_next.grid(row=3, column=6)
+
+
+def start(temp, seconds, gasa, atm):
+
+    current_temp = atm
+    t_end = time.time() + seconds
+    T2 = atm
+    count = 0
+    print(T2)
+    t1 = int(seconds/3)
+    global T_a
+    T_a = [atm]
+    print(t_end)
+    #a = t_control(temp, T2, t_end, count)
+    # print(a)
+    t_control(temp, T2, t_end, count)
 
 
 def easy_next(T, D, H, M, S, A, B):
@@ -227,6 +247,8 @@ def easy_next(T, D, H, M, S, A, B):
     button_start = Button(frame_n, text="Start", command=lambda: start(
         temp_int, time_s, gasa_int, atm))
     button_start.grid(row=3, column=4)
+    button_edit = Button(frame_n, text="edit", command=lambda: edit())
+    button_edit.grid(row=4, column=4)
 
 
 root.mainloop()
