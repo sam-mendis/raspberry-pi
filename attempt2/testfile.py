@@ -49,7 +49,8 @@ def read_volts():
     return V
 
 
-V = [10, read_volts()]
+V = read_volts()
+print(V)
 Cells_V.append([10, V[0], V[1], V[2], V[3], V[4], V[5]])
 print(Cells_V)
 

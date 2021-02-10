@@ -184,16 +184,6 @@ def counter_V():
         time.sleep(pause_time)
 
 
-# For multiprocessing to work, the functions I am calling can not have input arguments
-if __name__ == '__main__':
-    p1 = Process(target=control_T)
-    p1.start()
-    p2 = Process(target=counter_V)
-    p2.start()
-    p1.join()
-    p2.join()
-
-
 def read_volts():
     # Some function to measure the voltage of each cell
     t0 = time.time()
@@ -216,17 +206,21 @@ def Read_Values():
     t0 = time.time()
 
     # Writing Date and time of test to Voltage data file
-    D = [Date, Current_Time]
+    D_t = [[Date, Current_Time], [
+        'Time in seconds/s', 'Temperature/deg C']]
+
+    D_v = [[Date, Current_Time], [
+        'Cell 1 Voltage', 'Cell 2 Voltage', 'Cell 3 Voltage', 'Cell 4 Voltage', 'Cell 5 Voltage', 'Cell 6 Voltage']]
     file_v = open('Voltage_data.csv', 'a+', newline='')
     with file_v:
-        write = csv.writer()
-        write.writerows(D)
+        write = csv.writer(file_v)
+        write.writerows(D_v)
 
     # Writing Date and time of test to temperature data file
     file_t = open('Temperature_data.csv', 'a+', newline='')
     with file_t:
-        write = csv.writer()
-        write.writerows(D)
+        write = csv.writer(file_t)
+        write.writerows(D_t)
 
     Tend1 = t0+I.desired[0]
     Tend2 = t0+I.desired[1]+I.desired[0]
@@ -237,15 +231,16 @@ def Read_Values():
     while time.time() < Tend1:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        V = [read_volts()]
-        V_store = [current_time, V[0], V[1], V[2], V[3], V[4], V[5]]
+        rv = read_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
         with file_V:
-            write = csv.writer()
+            write = csv.writer(file_V)
             write.writerows(V_store)
 
-        Temperature = [current_time, read_temp()]
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
@@ -261,15 +256,15 @@ def Read_Values():
     while Tend1 < time.time() < Tend2:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        V = [read_volts()]
-        V_store = [current_time, V[0], V[1], V[2], V[3], V[4], V[5]]
+        rv = read_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
         with file_V:
-            write = csv.writer()
+            write = csv.writer(file_V)
             write.writerows(V_store)
 
-        Temperature = [current_time, read_temp()]
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
@@ -285,15 +280,15 @@ def Read_Values():
     while Tend2 < time.time() < Tend3:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        V = [read_volts()]
-        V_store = [current_time, V[0], V[1], V[2], V[3], V[4], V[5]]
+        rv = read_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
         with file_V:
-            write = csv.writer()
+            write = csv.writer(file_V)
             write.writerows(V_store)
 
-        Temperature = [current_time, read_temp()]
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
@@ -309,15 +304,15 @@ def Read_Values():
     while Tend3 < time.time() < Tend4:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        V = [read_volts()]
-        V_store = [current_time, V[0], V[1], V[2], V[3], V[4], V[5]]
+        rv = read_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
         with file_V:
-            write = csv.writer()
+            write = csv.writer(file_V)
             write.writerows(V_store)
 
-        Temperature = [current_time, read_temp()]
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
@@ -328,6 +323,16 @@ def Read_Values():
         t1 = t1+1
         pause_time = (t1*(M.desired[3])+t0)-time.time()
         time.sleep(pause_time)
+
+
+# For multiprocessing to work, the functions I am calling can not have input arguments
+if __name__ == '__main__':
+    p1 = Process(target=Read_Values)
+    p1.start()
+    p2 = Process(target=counter_V)
+    p2.start()
+    p1.join()
+    p2.join()
 
 
 # def controller1(fuck):
