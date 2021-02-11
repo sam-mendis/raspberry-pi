@@ -1,0 +1,141 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# ADS1115-myParts
+#
+DEF ADS1115-myParts U 0 40 Y Y 1 F N
+F0 "U" -600 450 50 H V L CNN
+F1 "ADS1115-myParts" 250 450 50 H V L CNN
+F2 "" -50 -50 50 H I C CNN
+F3 "" -900 400 50 H I C CNN
+$FPLIST
+ SOP*3x3mm*Pitch0.5mm*
+ *QFN*2x1.5mm*Pitch0.5mm
+$ENDFPLIST
+DRAW
+S 600 400 -600 -400 0 1 10 f
+X ADDR 1 700 300 100 L 50 50 1 1 I
+X SCL 10 700 200 100 L 50 50 1 1 I
+X ALERT/RDY 2 700 0 100 L 50 50 1 1 O
+X GND 3 0 -500 100 U 50 50 1 1 W
+X AIN0 4 -700 200 100 R 50 50 1 1 I
+X AIN1 5 -700 100 100 R 50 50 1 1 I
+X AIN2 6 -700 -100 100 R 50 50 1 1 I
+X AIN3 7 -700 -200 100 R 50 50 1 1 I
+X VDD 8 0 500 100 D 50 50 1 1 W
+X SDA 9 700 100 100 L 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# GREY@CHRISTOFORO.NET-myParts-base8x-rescue
+#
+DEF GREY@CHRISTOFORO.NET-myParts-base8x-rescue L 0 0 N N 1 F N
+F0 "L" 0 -125 60 H I C CNN
+F1 "GREY@CHRISTOFORO.NET-myParts-base8x-rescue" 0 0 100 H V C CNB
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+$FPLIST
+ logo
+$ENDFPLIST
+DRAW
+ENDDRAW
+ENDDEF
+#
+# Mounting_Hole-Mechanical-base8x-rescue
+#
+DEF Mounting_Hole-Mechanical-base8x-rescue MK 0 40 Y Y 1 F N
+F0 "MK" 0 200 50 H V C CNN
+F1 "Mounting_Hole-Mechanical-base8x-rescue" 0 125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Mounting?Hole*
+ Hole*
+$ENDFPLIST
+DRAW
+C 0 0 50 0 1 50 N
+ENDDRAW
+ENDDEF
+#
+# Mounting_Hole_PAD-Mechanical-base8x-rescue
+#
+DEF Mounting_Hole_PAD-Mechanical-base8x-rescue MK 0 40 N N 1 F N
+F0 "MK" 0 250 50 H V C CNN
+F1 "Mounting_Hole_PAD-Mechanical-base8x-rescue" 0 175 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Mounting?Hole*
+ Hole*
+$ENDFPLIST
+DRAW
+C 0 50 50 0 1 50 N
+X 1 1 0 -100 100 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# Screw_Terminal_01x08-Connector_Specialized-base8x-rescue
+#
+DEF Screw_Terminal_01x08-Connector_Specialized-base8x-rescue J 0 40 Y N 1 F N
+F0 "J" 0 400 50 H V C CNN
+F1 "Screw_Terminal_01x08-Connector_Specialized-base8x-rescue" 0 -500 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TerminalBlock*:*
+$ENDFPLIST
+DRAW
+C 0 -400 25 1 1 6 N
+C 0 -300 25 1 1 6 N
+C 0 -200 25 1 1 6 N
+C 0 -100 25 1 1 6 N
+C 0 0 25 1 1 6 N
+C 0 100 25 1 1 6 N
+C 0 200 25 1 1 6 N
+C 0 300 25 1 1 6 N
+S -50 350 50 -450 1 1 10 f
+P 2 1 1 6 -21 -387 13 -420 N
+P 2 1 1 6 -21 -287 13 -320 N
+P 2 1 1 6 -21 -187 13 -220 N
+P 2 1 1 6 -21 -87 13 -120 N
+P 2 1 1 6 -21 13 13 -20 N
+P 2 1 1 6 -21 113 13 80 N
+P 2 1 1 6 -21 213 13 180 N
+P 2 1 1 6 -21 313 13 280 N
+P 2 1 1 6 -14 -380 20 -413 N
+P 2 1 1 6 -14 -280 20 -313 N
+P 2 1 1 6 -14 -180 20 -213 N
+P 2 1 1 6 -14 -80 20 -113 N
+P 2 1 1 6 -14 20 20 -13 N
+P 2 1 1 6 -14 120 20 87 N
+P 2 1 1 6 -14 220 20 187 N
+P 2 1 1 6 -14 320 20 287 N
+X Pin_1 1 -200 300 150 R 50 50 1 1 P
+X Pin_2 2 -200 200 150 R 50 50 1 1 P
+X Pin_3 3 -200 100 150 R 50 50 1 1 P
+X Pin_4 4 -200 0 150 R 50 50 1 1 P
+X Pin_5 5 -200 -100 150 R 50 50 1 1 P
+X Pin_6 6 -200 -200 150 R 50 50 1 1 P
+X Pin_7 7 -200 -300 150 R 50 50 1 1 P
+X Pin_8 8 -200 -400 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Test_Point-Connector_Specialized-base8x-rescue
+#
+DEF Test_Point-Connector_Specialized-base8x-rescue TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Test_Point-Connector_Specialized-base8x-rescue" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ Pin*
+ Test*
+$ENDFPLIST
+DRAW
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

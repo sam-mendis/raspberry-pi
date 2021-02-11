@@ -9,10 +9,3 @@ import pandas as pd
 
 #adapter = PrologixAdapter('/dev/ttyUSB0')
 #sourcemeter = Keithley2400(adapter.gpib(4))
-
-
-class Dog:
-    pass
-
-
-print(Dog)
