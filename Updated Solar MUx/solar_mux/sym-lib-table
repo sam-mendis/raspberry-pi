@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "myParts")(type "KiCad")(uri "${KIPRJMOD}/../shared_libs/custom_symbols.kicad_sym")(options "")(descr ""))
+  (lib (name "old_parts")(type "Legacy")(uri "${KIPRJMOD}/../shared_libs/old_symbols.lib")(options "")(descr ""))
+)
