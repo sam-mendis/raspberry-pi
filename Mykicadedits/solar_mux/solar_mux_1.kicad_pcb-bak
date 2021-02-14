@@ -2130,7 +2130,7 @@
     )
   )
 
-  (gr_line (start -289.9156 73.7362) (end -289.9156 229.489) (angle 90) (layer Edge.Cuts) (width 1) (tstamp 602FCCD1))
+  (gr_line (start -289.9156 73.7362) (end -289.9156 229.4636) (angle 90) (layer Edge.Cuts) (width 1) (tstamp 602FCCD1))
   (gr_line (start -161.6964 73.7362) (end -161.6964 229.0572) (angle 90) (layer Edge.Cuts) (width 1))
   (gr_line (start -289.9156 229.4636) (end -161.6964 229.0572) (angle 90) (layer Edge.Cuts) (width 1) (tstamp 602FCCCB))
   (gr_line (start -289.9156 73.7362) (end -161.6964 73.7362) (angle 90) (layer Edge.Cuts) (width 1))

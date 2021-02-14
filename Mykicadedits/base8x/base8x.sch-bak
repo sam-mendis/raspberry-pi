@@ -816,7 +816,6 @@ NoConn ~ 1500 7500
 NoConn ~ 1500 7400
 NoConn ~ 1500 7300
 NoConn ~ 1500 7000
-NoConn ~ 1500 6400
 NoConn ~ 1500 6300
 Wire Wire Line
 	3050 4000 3525 4000
@@ -1071,7 +1070,7 @@ Wire Wire Line
 	2000 7000 2100 7000
 Text GLabel 3050 4900 2    50   Input ~ 0
 SCK
-Text GLabel 1500 6500 0    60   Input ~ 0
+Text GLabel 1500 6400 0    60   Input ~ 0
 SCL
 $Comp
 L power:+5V #PWR0108
@@ -1084,7 +1083,7 @@ F 3 "" H 1500 6200 50  0000 C CNN
 	1    1500 6200
 	-1   0    0    -1  
 $EndComp
-Text GLabel 1500 6600 0    60   Input ~ 0
+Text GLabel 1500 6500 0    60   Input ~ 0
 SDA
 Text GLabel 3625 2125 0    50   Input ~ 0
 HELP1
@@ -1127,4 +1126,6 @@ F 3 "" H 1800 6800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1475 7100 1500 7100
+Text GLabel 1500 6600 0    50   Input ~ 0
+HELP3
 $EndSCHEMATC
