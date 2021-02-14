@@ -120,17 +120,6 @@ Text GLabel 10550 1150 1    60   Input ~ 0
 A_I+
 Text GLabel 10450 1150 1    60   Input ~ 0
 A_V+
-$Comp
-L Connector_Generic:Conn_02x14_Odd_Even J3
-U 1 1 59C14E89
-P 1800 6800
-F 0 "J3" H 1850 7617 50  0000 C CNN
-F 1 "Conn_02x14_Counter_Clockwise" H 1850 7526 50  0001 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x14_P2.54mm_Vertical" H 1800 6800 50  0001 C CNN
-F 3 "" H 1800 6800 50  0001 C CNN
-	1    1800 6800
-	-1   0    0    -1  
-$EndComp
 Text Notes 1550 3700 2    60   ~ 0
 COMM_BUS
 Text GLabel 1550 3250 2    60   Input ~ 0
@@ -298,7 +287,7 @@ U 1 1 59F73A1F
 P 5600 1600
 F 0 "C1" H 5692 1646 50  0000 L CNN
 F 1 "1uF" H 5692 1555 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 5600 1600 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm" H 5600 1600 50  0001 C CNN
 F 3 "" H 5600 1600 50  0001 C CNN
 	1    5600 1600
 	1    0    0    -1  
@@ -469,8 +458,6 @@ $EndComp
 Wire Wire Line
 	3750 2400 3750 2500
 Wire Wire Line
-	3750 2100 3750 2150
-Wire Wire Line
 	4450 2150 4250 2150
 Connection ~ 3750 2150
 $Comp
@@ -577,7 +564,7 @@ Text GLabel 1050 4400 1    60   Input ~ 0
 A_V_D
 Text GLabel 1250 4550 3    60   Input ~ 0
 A_V_D_LOC
-Text GLabel 850  4550 3    60   Input ~ 0
+Text GLabel 750  4550 3    60   Input ~ 0
 A_V_D_EXT
 Text GLabel 1050 3350 0    60   Input ~ 0
 A_V_D_EXT
@@ -828,12 +815,8 @@ Wire Wire Line
 NoConn ~ 1500 7500
 NoConn ~ 1500 7400
 NoConn ~ 1500 7300
-NoConn ~ 1500 7200
-NoConn ~ 1500 6700
 NoConn ~ 1500 7000
-NoConn ~ 1500 6400
 NoConn ~ 1500 6300
-NoConn ~ 1500 6200
 Wire Wire Line
 	3050 4000 3525 4000
 $Comp
@@ -1081,14 +1064,68 @@ Wire Wire Line
 	3450 5275 3500 5275
 Wire Wire Line
 	4600 5375 4925 5375
-NoConn ~ 1500 6500
-NoConn ~ 1500 6600
-NoConn ~ 1500 6900
 NoConn ~ 1500 6800
-NoConn ~ 1500 7100
 NoConn ~ 10050 2525
 Wire Wire Line
 	2000 7000 2100 7000
 Text GLabel 3050 4900 2    50   Input ~ 0
 SCK
+Text GLabel 1500 6400 0    60   Input ~ 0
+SCL
+$Comp
+L power:+5V #PWR0108
+U 1 1 602B69AB
+P 1500 6200
+F 0 "#PWR0108" H 1500 6050 50  0001 C CNN
+F 1 "+5V" H 1500 6340 28  0000 C CNN
+F 2 "" H 1500 6200 50  0000 C CNN
+F 3 "" H 1500 6200 50  0000 C CNN
+	1    1500 6200
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1500 6500 0    60   Input ~ 0
+SDA
+Text GLabel 3625 2125 0    50   Input ~ 0
+HELP1
+Wire Wire Line
+	3625 2125 3750 2125
+Wire Wire Line
+	3750 2100 3750 2125
+Connection ~ 3750 2125
+Wire Wire Line
+	3750 2125 3750 2150
+Text GLabel 1500 7200 0    50   Input ~ 0
+HELP1
+Text GLabel 1500 6700 0    50   Input ~ 0
+HELP2
+Text GLabel 800  4475 0    50   Input ~ 0
+HELP2
+Wire Wire Line
+	800  4475 800  4550
+Wire Wire Line
+	750  4550 800  4550
+Connection ~ 800  4550
+Wire Wire Line
+	800  4550 850  4550
+Text GLabel 1500 6900 0    60   Input ~ 0
+A_V_D
+Text GLabel 4300 2800 0    50   Input ~ 0
+HELP3
+Text GLabel 1475 7100 0    50   Input ~ 0
+HELP3
+$Comp
+L Connector_Generic:Conn_02x14_Odd_Even J3
+U 1 1 59C14E89
+P 1800 6800
+F 0 "J3" H 1850 7617 50  0000 C CNN
+F 1 "Conn_02x14_Counter_Clockwise" H 1850 7526 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x14_P2.54mm_Vertical" H 1800 6800 50  0001 C CNN
+F 3 "" H 1800 6800 50  0001 C CNN
+	1    1800 6800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1475 7100 1500 7100
+Text GLabel 1500 6600 0    50   Input ~ 0
+HELP3
 $EndSCHEMATC
