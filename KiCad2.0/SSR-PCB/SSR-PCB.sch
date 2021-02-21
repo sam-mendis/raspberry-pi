@@ -1,0 +1,133 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR03
+U 1 1 58FF8E6A
+P 3700 7400
+F 0 "#PWR03" H 3700 7150 50  0001 C CNN
+F 1 "GND" H 3700 7250 50  0000 C CNN
+F 2 "" H 3700 7400 50  0000 C CNN
+F 3 "" H 3700 7400 50  0000 C CNN
+	1    3700 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 58FF8E88
+P 3700 7400
+F 0 "#FLG01" H 3700 7475 50  0001 C CNN
+F 1 "PWR_FLAG" H 3700 7550 50  0000 C CNN
+F 2 "" H 3700 7400 50  0000 C CNN
+F 3 "" H 3700 7400 50  0000 C CNN
+	1    3700 7400
+	1    0    0    -1  
+$EndComp
+Text Notes 3200 7050 0    60   ~ 0
+POWER FLAGS
+$Comp
+L Relay_SolidState:34.81-7048 SSR-Ithink1
+U 1 1 6011EB5B
+P 4300 5475
+F 0 "SSR-Ithink1" H 4300 5800 50  0000 C CNN
+F 1 "34.81-7048" H 4300 5709 50  0000 C CNN
+F 2 "OptoDevice:Finder_34.81" H 4100 5275 50  0001 L CIN
+F 3 "http://www.us.liteon.com/downloads/LTV-817-827-847.PDF" H 4300 5475 50  0001 L CNN
+	1    4300 5475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 5575 3750 5575
+Wire Wire Line
+	3750 5575 3750 5775
+$Comp
+L power:GND #PWR02
+U 1 1 6012CB70
+P 3750 5775
+F 0 "#PWR02" H 3750 5525 50  0001 C CNN
+F 1 "GND" H 3755 5602 50  0000 C CNN
+F 2 "" H 3750 5775 50  0001 C CNN
+F 3 "" H 3750 5775 50  0001 C CNN
+	1    3750 5775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4025 5375 4000 5375
+Wire Wire Line
+	3900 5375 3900 5275
+Wire Wire Line
+	3900 5275 3825 5275
+$Comp
+L Device:R Resistor_SSR1
+U 1 1 60130DA5
+P 3675 5275
+F 0 "Resistor_SSR1" H 3605 5229 50  0000 R CNN
+F 1 "?" H 3605 5320 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal" V 3605 5275 50  0001 C CNN
+F 3 "~" H 3675 5275 50  0001 C CNN
+	1    3675 5275
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3475 5275 3525 5275
+Connection ~ 4000 5375
+Wire Wire Line
+	4000 5375 3900 5375
+Text GLabel 3475 5275 0    50   Input ~ 0
+GPIO6
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 6032F469
+P 2675 5375
+F 0 "J1" H 2755 5367 50  0000 L CNN
+F 1 "Conn_01x02" H 2755 5276 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2675 5375 50  0001 C CNN
+F 3 "~" H 2675 5375 50  0001 C CNN
+	1    2675 5375
+	1    0    0    -1  
+$EndComp
+Text GLabel 2475 5375 0    50   Input ~ 0
+GPIO6
+$Comp
+L power:GND #PWR01
+U 1 1 6032FA4E
+P 2475 5475
+F 0 "#PWR01" H 2475 5225 50  0001 C CNN
+F 1 "GND" H 2480 5302 50  0000 C CNN
+F 2 "" H 2475 5475 50  0001 C CNN
+F 3 "" H 2475 5475 50  0001 C CNN
+	1    2475 5475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 5575 5000 5575
+$Comp
+L Connector:Screw_Terminal_01x02 J2
+U 1 1 60332CFC
+P 5200 5400
+F 0 "J2" H 5280 5392 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 5280 5301 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal" H 5200 5400 50  0001 C CNN
+F 3 "~" H 5200 5400 50  0001 C CNN
+	1    5200 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 5375 5000 5400
+Wire Wire Line
+	4600 5375 5000 5375
+Wire Wire Line
+	5000 5500 5000 5575
+$EndSCHEMATC
