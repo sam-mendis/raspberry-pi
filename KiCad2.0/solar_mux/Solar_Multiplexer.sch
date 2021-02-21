@@ -124,7 +124,7 @@ F 4 "1292238" H -750 150 50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U7
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U7
 U 1 1 59B14970
 P 1850 4200
 F 0 "U7" H 1650 4400 50  0000 L CNN
@@ -136,7 +136,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U10
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U10
 U 1 1 59B15747
 P 1850 4725
 F 0 "U10" H 1650 4925 50  0000 L CNN
@@ -148,7 +148,7 @@ F 4 "1708441" H 0   -825 50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U6
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U6
 U 1 1 59B15786
 P 1850 3750
 F 0 "U6" H 1650 3950 50  0000 L CNN
@@ -160,7 +160,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U3
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U3
 U 1 1 59B15ABC
 P 1850 2400
 F 0 "U3" H 1650 2600 50  0000 L CNN
@@ -172,7 +172,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U2
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U2
 U 1 1 59B15AC2
 P 1850 1950
 F 0 "U2" H 1650 2150 50  0000 L CNN
@@ -184,7 +184,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U5
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U5
 U 1 1 59B15AC8
 P 1850 3300
 F 0 "U5" H 1650 3500 50  0000 L CNN
@@ -196,7 +196,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U4
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U4
 U 1 1 59B15ACE
 P 1850 2850
 F 0 "U4" H 1650 3050 50  0000 L CNN
@@ -208,7 +208,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U1
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U1
 U 1 1 59B15AD4
 P 1850 1500
 F 0 "U1" H 1650 1700 50  0000 L CNN
@@ -220,7 +220,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U17
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U17
 U 1 1 59B16E05
 P 4050 4200
 F 0 "U17" H 3850 4400 50  0000 L CNN
@@ -232,7 +232,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U20
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U20
 U 1 1 59B16E0B
 P 4050 4725
 F 0 "U20" H 3850 4925 50  0000 L CNN
@@ -244,7 +244,7 @@ F 4 "1708441" H 0   -825 50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U16
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U16
 U 1 1 59B16E17
 P 4050 3750
 F 0 "U16" H 3850 3950 50  0000 L CNN
@@ -256,7 +256,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U13
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U13
 U 1 1 59B16E1D
 P 4050 2400
 F 0 "U13" H 3850 2600 50  0000 L CNN
@@ -268,7 +268,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U12
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U12
 U 1 1 59B16E23
 P 4050 1950
 F 0 "U12" H 3850 2150 50  0000 L CNN
@@ -280,7 +280,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U15
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U15
 U 1 1 59B16E29
 P 4050 3300
 F 0 "U15" H 3850 3500 50  0000 L CNN
@@ -292,7 +292,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U14
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U14
 U 1 1 59B16E2F
 P 4050 2850
 F 0 "U14" H 3850 3050 50  0000 L CNN
@@ -304,7 +304,7 @@ F 4 "1708441" H 0   0   50  0001 C CNN "farnellCode"
 	1    0    0    -1  
 $EndComp
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U11
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U11
 U 1 1 59B16E35
 P 4050 1500
 F 0 "U11" H 3850 1700 50  0000 L CNN
@@ -321,7 +321,7 @@ U 1 1 59B181A3
 P 6450 3750
 F 0 "J2" H 6500 4050 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 6500 3350 50  0000 C CNN
-F 2 "myParts:ESQ-106-44-G-D-004" H 6450 3750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 6450 3750 50  0001 C CNN
 F 3 "" H 6450 3750 50  0001 C CNN
 F 4 "ESQ-106-44-G-D-004" H -1400 -650 50  0001 C CNN "samtec"
 	1    6450 3750
@@ -332,33 +332,31 @@ V6
 Text Label 6250 4150 1    60   ~ 0
 I6
 Text Label 6350 4150 1    60   ~ 0
-V4
+V5
 Text Label 6450 4150 1    60   ~ 0
-I4
+I5
 Text Label 6550 4150 1    60   ~ 0
-V2
+V4
 Text Label 6650 4150 1    60   ~ 0
-I2
+I4
 Text Label 6350 3300 1    60   ~ 0
-IT
+IB
 Text Label 6450 3300 1    60   ~ 0
-VT
+VB
 Text Label 6650 3400 1    60   ~ 0
 RSense
 Text Label 6150 2000 1    60   ~ 0
-V5
-Text Label 6250 2000 1    60   ~ 0
-I5
-Text Label 6350 2000 1    60   ~ 0
 V3
-Text Label 6450 2000 1    60   ~ 0
+Text Label 6250 2000 1    60   ~ 0
 I3
+Text Label 6350 2000 1    60   ~ 0
+V2
 Text Label 6550 2000 1    60   ~ 0
 V1
 Text Label 6650 2000 1    60   ~ 0
 I1
 Text Label 6450 2800 1    60   ~ 0
-VB
+VT
 Text Label 6550 2800 1    60   ~ 0
 BCu
 Text Label 6650 2800 1    60   ~ 0
@@ -384,14 +382,6 @@ F 3 "" H 6300 7100 50  0000 C CNN
 $EndComp
 Text GLabel 6200 6750 0    60   Input ~ 0
 ~CS
-Text GLabel 10050 5350 0    60   Input ~ 0
-~CS
-Text GLabel 10700 5450 0    60   Input ~ 0
-MISO
-Text GLabel 10700 5550 0    60   Input ~ 0
-MOSI
-Text GLabel 10700 5650 0    60   Input ~ 0
-SCK
 NoConn ~ 9900 2050
 NoConn ~ 9900 2150
 $Comp
@@ -400,7 +390,7 @@ U 1 1 59B1BF3F
 P 10800 1250
 F 0 "C1" H 10825 1350 50  0000 L CNN
 F 1 "0.1uF" H 10825 1150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 10838 1100 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P2.50mm" H 10838 1100 50  0001 C CNN
 F 3 "" H 10800 1250 50  0001 C CNN
 F 4 "1759312" H -100 300 50  0001 C CNN "farnellCode"
 	1    10800 1250
@@ -434,40 +424,6 @@ F 3 "" H 9200 3500 50  0000 C CNN
 	1    9200 3500
 	1    0    0    -1  
 $EndComp
-Text GLabel 10700 6050 0    60   Input ~ 0
-V-
-Text GLabel 10700 5850 0    60   Input ~ 0
-I+
-Text GLabel 10700 6150 0    60   Input ~ 0
-I-
-Text GLabel 10700 5950 0    60   Input ~ 0
-V+
-$Comp
-L power:GND #PWR018
-U 1 1 59B1E377
-P 10350 5800
-F 0 "#PWR018" H 10350 5550 50  0001 C CNN
-F 1 "GND" H 10350 5650 50  0000 C CNN
-F 2 "" H 10350 5800 50  0000 C CNN
-F 3 "" H 10350 5800 50  0000 C CNN
-	1    10350 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR020
-U 1 1 59B1E490
-P 10500 4800
-F 0 "#PWR020" H 10500 4650 50  0001 C CNN
-F 1 "+3V3" H 10515 4973 50  0000 C CNN
-F 2 "" H 10500 4800 50  0001 C CNN
-F 3 "" H 10500 4800 50  0001 C CNN
-	1    10500 4800
-	1    0    0    -1  
-$EndComp
-Text GLabel 10700 5250 0    60   Input ~ 0
-SCL
-Text GLabel 10700 5150 0    60   Input ~ 0
-SDA
 NoConn ~ 8500 2650
 NoConn ~ 8500 2750
 NoConn ~ 8500 2850
@@ -489,10 +445,6 @@ Text Label 7550 1850 0    60   ~ 0
 P5
 Text Label 7550 1950 0    60   ~ 0
 P6
-Text Label 7550 2050 0    60   ~ 0
-P7
-Text Label 7550 2150 0    60   ~ 0
-P8
 $Comp
 L power:GND #PWR021
 U 1 1 59B24F81
@@ -568,18 +520,6 @@ Connection ~ 9200 1000
 Wire Wire Line
 	9200 3350 9200 3500
 Connection ~ 10500 1000
-Wire Wire Line
-	10700 4950 10500 4950
-Wire Wire Line
-	10500 4950 10500 4800
-Wire Wire Line
-	10700 4850 10650 4850
-Wire Wire Line
-	10350 5750 10700 5750
-Wire Wire Line
-	10350 5750 10350 5800
-Wire Wire Line
-	10050 5350 10150 5350
 Wire Wire Line
 	8500 2150 8450 2150
 Wire Wire Line
@@ -704,20 +644,6 @@ Wire Wire Line
 	1550 4300 1350 4300
 Text Label 7550 2550 0    60   ~ 0
 V_D_EN
-$Comp
-L Connector_Generic:Conn_01x14 J4
-U 1 1 59B2F195
-P 10900 5450
-F 0 "J4" H 10900 6150 50  0000 C CNN
-F 1 "Conn_01x14" H 10900 4650 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x14_P2.54mm_Vertical" H 10900 5450 50  0001 C CNN
-F 3 "" H 10900 5450 50  0001 C CNN
-F 4 "2037821" H 0   0   50  0001 C CNN "farnellCode"
-	1    10900 5450
-	1    0    0    -1  
-$EndComp
-Text GLabel 10700 5050 0    60   Input ~ 0
-V_D
 Text GLabel 1600 6800 2    60   Input ~ 0
 ~CS
 Text GLabel 950  6900 2    60   Input ~ 0
@@ -789,7 +715,7 @@ $EndComp
 Text GLabel 950  6500 2    60   Input ~ 0
 V_D
 $Comp
-L solar_mux-rescue:ASSR-1611-myParts U21
+L solar_mux_1-rescue:ASSR-1611-myParts-solar_mux-rescue U21
 U 1 1 59B306AE
 P 6050 1100
 F 0 "U21" H 5850 1300 50  0000 L CNN
@@ -876,25 +802,12 @@ Wire Wire Line
 	5400 7100 5400 7000
 Wire Wire Line
 	5400 6500 5400 6400
-$Comp
-L Device:Jumper_NC_Small JP6
-U 1 1 59B34D7F
-P 10250 5350
-F 0 "JP6" H 10250 5430 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 10260 5290 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 10250 5350 50  0001 C CNN
-F 3 "" H 10250 5350 50  0001 C CNN
-	1    10250 5350
-	-1   0    0    1   
-$EndComp
 Text GLabel 6350 1000 2    60   Input ~ 0
 V_D
 Text Notes 6450 600  2    60   ~ 0
 BOARD TYPE DETECTION
 Text Notes 7250 1650 2    60   ~ 0
 CONNECTORS TO SPRING PIN BOARD
-Text Notes 11150 4750 3    60   ~ 0
-RIGHT SIDE BUS CONNECTIONS
 Text Notes 650  7600 1    60   ~ 0
 LEFT SIDE BUS CONNECTIONS
 Text GLabel 5350 3550 2    60   Input ~ 0
@@ -975,7 +888,7 @@ U 1 1 59F34C74
 P 10500 1300
 F 0 "R3" V 10580 1300 50  0000 C CNN
 F 1 "10K" V 10500 1300 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 10430 1300 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 10430 1300 50  0001 C CNN
 F 3 "" H 10500 1300 50  0000 C CNN
 F 4 "2826357" H -100 300 50  0001 C CNN "farnellCode"
 	1    10500 1300
@@ -1026,7 +939,7 @@ U 1 1 5A007B84
 P 7150 5900
 F 0 "TP1" H 7208 6020 50  0000 L CNN
 F 1 "Test_Point" H 7208 5929 50  0000 L CNN
-F 2 "myParts:Test_Point_S1751-46R" H 7350 5900 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 7350 5900 50  0001 C CNN
 F 3 "" H 7350 5900 50  0001 C CNN
 F 4 "2293786" H 7150 5900 50  0001 C CNN "farnell code"
 	1    7150 5900
@@ -1069,8 +982,6 @@ Wire Wire Line
 	4550 3550 4550 3400
 Wire Wire Line
 	1350 3550 1350 3850
-Wire Wire Line
-	10350 5350 10700 5350
 Wire Notes Line
 	5600 1700 7250 1700
 Wire Notes Line
@@ -1167,19 +1078,6 @@ $EndComp
 Wire Wire Line
 	1000 6150 1000 6300
 $Comp
-L power:+5V #PWR0107
-U 1 1 5C8074BB
-P 10650 4600
-F 0 "#PWR0107" H 10650 4450 50  0001 C CNN
-F 1 "+5V" H 10665 4773 50  0000 C CNN
-F 2 "" H 10650 4600 50  0001 C CNN
-F 3 "" H 10650 4600 50  0001 C CNN
-	1    10650 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10650 4600 10650 4850
-$Comp
 L power:+5V #PWR0108
 U 1 1 5C8163BD
 P 9200 850
@@ -1202,22 +1100,6 @@ F 4 "744C083331JPCT-ND" H 8250 2050 60  0001 C CNN "digikey"
 	1    8250 2050
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	7550 1450 8050 1450
-Wire Wire Line
-	7550 1550 8050 1550
-Wire Wire Line
-	7550 1650 8050 1650
-Wire Wire Line
-	7550 1750 8050 1750
-Wire Wire Line
-	7550 1850 8050 1850
-Wire Wire Line
-	7550 1950 8050 1950
-Wire Wire Line
-	7550 2050 8050 2050
-Wire Wire Line
-	7550 2150 8050 2150
 Wire Wire Line
 	2200 4200 2150 4200
 Wire Wire Line
@@ -1295,7 +1177,7 @@ U 1 1 5C6E90B0
 P 8250 2350
 F 0 "R1" V 8200 2150 50  0000 C CNN
 F 1 "330R" V 8250 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8180 2350 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 8180 2350 50  0001 C CNN
 F 3 "" H 8250 2350 50  0000 C CNN
 F 4 "2073607" H -2350 1350 50  0001 C CNN "farnellCode"
 	1    8250 2350
@@ -1307,7 +1189,7 @@ U 1 1 5C6E9834
 P 8250 2450
 F 0 "R2" V 8200 2250 50  0000 C CNN
 F 1 "330R" V 8250 2450 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8180 2450 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 8180 2450 50  0001 C CNN
 F 3 "" H 8250 2450 50  0000 C CNN
 F 4 "2073607" H -2350 1450 50  0001 C CNN "farnellCode"
 	1    8250 2450
@@ -1319,7 +1201,7 @@ U 1 1 5C6E98BB
 P 8250 2550
 F 0 "R4" V 8200 2350 50  0000 C CNN
 F 1 "680R" V 8250 2550 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8180 2550 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 8180 2550 50  0001 C CNN
 F 3 "" H 8250 2550 50  0000 C CNN
 F 4 "2694489" H -2350 1550 50  0001 C CNN "farnellCode"
 	1    8250 2550
@@ -1337,17 +1219,6 @@ Wire Wire Line
 	7550 2350 8100 2350
 Wire Wire Line
 	7550 2450 8100 2450
-$Comp
-L solar_mux-rescue:logo_text-logo L1
-U 1 1 59B41702
-P 9475 6775
-F 0 "L1" H 9475 6650 60  0001 C CNN
-F 1 "grey@mutovis.com" H 9475 6475 100 0000 C CNB
-F 2 "logo:text" H 9475 6775 60  0001 C CNN
-F 3 "" H 9475 6775 60  0001 C CNN
-	1    9475 6775
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2200 4200 2200 4725
 Connection ~ 2200 4200
@@ -1359,14 +1230,14 @@ Wire Wire Line
 Connection ~ 3700 4200
 Connection ~ 3700 4725
 Text Label 6350 2800 1    60   ~ 0
-IB
+IT
 $Comp
 L Connector_Generic:Conn_02x06_Odd_Even J3
 U 1 1 59B18DF3
 P 6450 2425
 F 0 "J3" H 6500 2725 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 6500 2025 50  0000 C CNN
-F 2 "myParts:ESQ-106-44-G-D" H 6450 2425 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 6450 2425 50  0001 C CNN
 F 3 "" H 6450 2425 50  0001 C CNN
 F 4 "1930232" H -1400 -625 50  0001 C CNN "FarnellPart"
 	1    6450 2425
@@ -1376,4 +1247,31 @@ NoConn ~ 6250 2625
 NoConn ~ 6150 2625
 NoConn ~ 6250 3450
 NoConn ~ 6150 3450
+Text Label 6450 2000 1    60   ~ 0
+I2
+NoConn ~ 8050 2050
+NoConn ~ 8050 2150
+$Comp
+L power:+5V #PWR0107
+U 1 1 60303A7C
+P 1000 6150
+F 0 "#PWR0107" H 1000 6000 50  0001 C CNN
+F 1 "+5V" H 1015 6323 50  0000 C CNN
+F 2 "" H 1000 6150 50  0001 C CNN
+F 3 "" H 1000 6150 50  0001 C CNN
+	1    1000 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 1450 8050 1450
+Wire Wire Line
+	7550 1550 8050 1550
+Wire Wire Line
+	7550 1650 8050 1650
+Wire Wire Line
+	7550 1750 8050 1750
+Wire Wire Line
+	7550 1850 8050 1850
+Wire Wire Line
+	7550 1950 8050 1950
 $EndSCHEMATC
