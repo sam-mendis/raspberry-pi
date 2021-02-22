@@ -1,0 +1,24 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,(5.1.9-0-10_14)*%
+%TF.CreationDate,2021-02-22T09:56:50+00:00*%
+%TF.ProjectId,Solar_Multiplexer,536f6c61-725f-44d7-956c-7469706c6578,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,NonPlated,1,2,NPTH,Drill*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.1.9-0-10_14)) date 2021-02-22 09:56:50*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,ComponentDrill*%
+%ADD10C,2.200000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,REF\u002A\u002A*%
+X-310000000Y-75000000D03*
+X-310000000Y-253000000D03*
+X-200000000Y-75000000D03*
+X-200000000Y-254000000D03*
+M02*

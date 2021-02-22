@@ -7,20 +7,20 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.9-0-10_14)"
     },
-    "CreationDate":  "2021-02-14T15:56:36+00:00"
+    "CreationDate":  "2021-02-22T09:57:15+00:00"
   },
   "GeneralSpecs":
   {
     "ProjectId":
     {
-      "Name": "solar_mux_1",
-      "GUID": "736f6c61-725f-46d7-9578-5f312e6b6963",
+      "Name": "Solar_Multiplexer",
+      "GUID": "536f6c61-725f-44d7-956c-7469706c6578",
       "Revision": "rev?"
     },
     "Size":
     {
-      "X": 129.219,
-      "Y": 156.727
+      "X": 206.000,
+      "Y": 191.000
     },
     "LayerNumber": 2,
     "BoardThickness":  1.600
@@ -32,54 +32,66 @@
       "PadToPad":  0.200,
       "PadToTrack":  0.200,
       "TrackToTrack":  0.200,
-      "MinLineWidth":  0.250
+      "MinLineWidth":  0.500,
+      "TrackToRegion":  0.500,
+      "RegionToRegion":  0.500
     }
   ],
   "FilesAttributes":
   [
     {
-      "Path":  "solar_mux_1-F_Cu.gbr",
+      "Path":  "Solar_Multiplexer-F_Cu.gbr",
       "FileFunction":  "Copper,L1,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-B_Cu.gbr",
+      "Path":  "Solar_Multiplexer-B_Cu.gbr",
       "FileFunction":  "Copper,L2,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-F_Paste.gbr",
+      "Path":  "Solar_Multiplexer-F_Paste.gbr",
       "FileFunction":  "SolderPaste,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-B_Paste.gbr",
+      "Path":  "Solar_Multiplexer-B_Paste.gbr",
       "FileFunction":  "SolderPaste,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-F_SilkS.gbr",
+      "Path":  "Solar_Multiplexer-F_SilkS.gbr",
       "FileFunction":  "Legend,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-B_SilkS.gbr",
+      "Path":  "Solar_Multiplexer-B_SilkS.gbr",
       "FileFunction":  "Legend,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "solar_mux_1-F_Mask.gbr",
+      "Path":  "Solar_Multiplexer-F_Mask.gbr",
       "FileFunction":  "SolderMask,Top",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "solar_mux_1-B_Mask.gbr",
+      "Path":  "Solar_Multiplexer-B_Mask.gbr",
       "FileFunction":  "SolderMask,Bot",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "solar_mux_1-Edge_Cuts.gbr",
+      "Path":  "Solar_Multiplexer-Edge_Cuts.gbr",
       "FileFunction":  "Profile",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "Solar_Multiplexer-F_Fab.gbr",
+      "FileFunction":  "AssemblyDrawing,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "Solar_Multiplexer-B_Fab.gbr",
+      "FileFunction":  "AssemblyDrawing,Bot",
       "FilePolarity":  "Positive"
     }
   ],
