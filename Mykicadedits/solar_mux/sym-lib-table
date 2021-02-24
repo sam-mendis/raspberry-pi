@@ -1,6 +1,0 @@
-(sym_lib_table
-  (lib (name myParts)(type Legacy)(uri ${KIPRJMOD}/../shared_libs/custom_symbols.kicad_sym)(options "")(descr ""))
-  (lib (name old_parts)(type Legacy)(uri ${KIPRJMOD}/../shared_libs/old_symbols.lib)(options "")(descr ""))
-  (lib (name solar_mux-rescue)(type Legacy)(uri ${KIPRJMOD}/solar_mux-rescue.lib)(options "")(descr ""))
-  (lib (name solar_mux_1-rescue)(type Legacy)(uri ${KIPRJMOD}/solar_mux_1-rescue.lib)(options "")(descr ""))
-)
