@@ -273,7 +273,7 @@ def Read_Values():
             write.writerows(Temperature)
 
         t1 = t1+1
-        pause_time = (t1*(M.desired[1])+t0)-time.time()
+        pause_time = (t1*(M.desired[1])+Tend1)-time.time()
         time.sleep(pause_time)
 
     t1 = 0
@@ -297,12 +297,13 @@ def Read_Values():
             write.writerows(Temperature)
 
         t1 = t1+1
-        pause_time = (t1*(M.desired[2])+t0)-time.time()
+        pause_time = (t1*(M.desired[2])+Tend2)-time.time()
         time.sleep(pause_time)
 
     t1 = 0
     while Tend3 < time.time() < Tend4:
         current_time = (round((time.time()-t0), 2))
+        print(current_time)
         # Writing the voltage and temperature to each list
         rv = read_volts()
         V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
@@ -321,7 +322,7 @@ def Read_Values():
             write.writerows(Temperature)
 
         t1 = t1+1
-        pause_time = (t1*(M.desired[3])+t0)-time.time()
+        pause_time = (t1*(M.desired[3])+Tend3)-time.time()
         time.sleep(pause_time)
 
 
