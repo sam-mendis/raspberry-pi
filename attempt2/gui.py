@@ -127,10 +127,12 @@ def counter_V():
     t = 0
     while t < (I.desired[3]+I.desired[2] + I.desired[1]+I.desired[0]):
         led_v.on()
-        if button_v.is_pressed:
-            led_v.off()
 
         t = t+1
+
+        pause_time = (t+t0)-time.time()
+        time.sleep(pause_time/2)
+        led_v.off()
         pause_time = (t+t0)-time.time()
         time.sleep(pause_time)
 
@@ -198,7 +200,7 @@ def Read_Values():
         # Storing Data on Temperature File
         t1 = t1+1
         led_t.on()
-        time.sleep(0.1)
+
         pause_time = (t1*(M.desired[0])+t0)-time.time()
 
         if button_t.is_pressed:
@@ -237,7 +239,7 @@ def Read_Values():
         # Storing Data on Temperature File
         t1 = t1+1
         led_t.on()
-        time.sleep(0.1)
+
         pause_time = (t1*(M.desired[1])+Tend1)-time.time()
 
         if button_t.is_pressed:
@@ -273,7 +275,7 @@ def Read_Values():
 
         t1 = t1+1
         led_t.on()
-        time.sleep(0.1)
+
         pause_time = (t1*(M.desired[2])+Tend2)-time.time()
 
         if button_t.is_pressed:
@@ -315,7 +317,7 @@ def Read_Values():
 
         t1 = t1+1
         led_t.on()
-        time.sleep(0.1)
+
         pause_time = (t1*(M.desired[3])+Tend3)-time.time()
 
         if button_t.is_pressed:
