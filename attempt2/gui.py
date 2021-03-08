@@ -42,11 +42,6 @@ device_file = device_folder + '/w1_slave'
 '''
 
 # Testing the code to see if it runs in parallel while checking lights etc
-button_v = Button(23)
-button_t = Button(4)
-
-led_v = LED(24)
-led_t = LED(6)
 
 
 class parameters:
@@ -121,7 +116,11 @@ def temp_control(Temp):
     return Temp.actual
 
 
+t
+
 # A fucntion to check the ultiprocessing module is working fine
+
+
 def counter_V():
     t0 = time.time()
     t = 0
