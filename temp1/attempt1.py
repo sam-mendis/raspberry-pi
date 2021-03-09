@@ -16,10 +16,7 @@ import csv
 # Importing Functions in functions.py
 from functions import restart_program
 
-from functions import v_measure
-from functions import temp_control
-from functions import temp_model
-from functions import t_conrol
+
 from functions import start
 
 
