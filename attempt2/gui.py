@@ -116,8 +116,6 @@ def temp_control(Temp):
     return Temp.actual
 
 
-t
-
 # A fucntion to check the ultiprocessing module is working fine
 
 
