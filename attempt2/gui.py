@@ -1,3 +1,12 @@
+from typing import AsyncContexstManager
+import csv
+import array
+import json
+import sys
+import os
+import glob
+import math  # for creating time varying voltage and temperature maps
+import time
 from random import randint
 from random import seed
 from datetime import datetime
@@ -6,27 +15,20 @@ from tkinter import *
 from multiprocessing import Process
 from gpiozero import LED, Button
 
+# Importing and setting up keithley for measurements. Beep indicates code is interfacing with keithley
+from pymeasure.instruments.keithley import Keithley2400
+from smky import k_measure_v, k_measure_I, k_set_I, k_set_V
+keithley = Keithley2400("GPIB::1")
+keithley.beep(100, 3)
+time.sleep(10)
+
 
 # from temperature_sensor_code import *
-
 # For the resetting
 # for the time part
-import time
-import math  # for creating time varying voltage and temperature maps
 # For DS18B20
-import glob
-import gpiozero
-import os
-import sys
-import json
-import array
-import csv
-from typing import AsyncContextManager
-
-# need to have this before any tkinter program.
-# this creates the window for the gui
 # Temperature sesnor is goig to be connected to GPIO 4
-root = Tk()
+
 
 '''Sorting out date and time'''
 date_time = datetime.now()
@@ -79,6 +81,38 @@ t.desiredv(5)
 print(A.actual)
 print(A.desired)'''
 
+
+"Functions to open and close the relays on the MUX board"
+
+
+def all_off():
+    LED(2).off()  # Cell 1 (SDA)
+    LED(3).off()  # Cell 2 (SCL)
+    LED(17).off()  # Cell 3 (A_CS)
+    LED(9).off()  # Cell 4 (MISO)
+    LED(10).off()  # Cell 5 (MOSI)
+    LED(8).off()  # Cell 6 (SCK)
+
+
+def all_on():
+    LED(2).on()
+    LED(3).on()
+    LED(17).on()
+    LED(9).on()
+    LED(10).on()
+    LED(8).on()
+
+
+def switch_on(n):
+    R = [LED(2), LED(3), LED(17), LED(9), LED(10), LED(8)]
+    R(n).on()
+
+
+def switch_off(n):
+    R = [LED(2), LED(3), LED(17), LED(9), LED(10), LED(8)]
+    R(n).off()
+
+
 # fake read temp
 
 
@@ -92,6 +126,9 @@ def desired_temp():
 
 # The function to measure the voltage
 def measure_volts():
+    switch_on(1)
+    time.sleep(0.5)
+
     return 0.1
 
 
@@ -181,8 +218,8 @@ def Read_Values():
     while time.time() < Tend1:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        #rv = read_volts()
-        #V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+        # rv = read_volts()
+        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         if button_v.is_pressed:
             V_store = [[current_time, 1]]
         else:
@@ -193,7 +230,7 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        #Temperature = [[current_time, read_temp()]]
+        # Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         t1 = t1+1
         led_t.on()
@@ -218,8 +255,8 @@ def Read_Values():
     while Tend1 < time.time() < Tend2:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        #rv = read_volts()
-        #V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+        # rv = read_volts()
+        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
 
         if button_v.is_pressed:
             V_store = [[current_time, 1]]
@@ -232,7 +269,7 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        #Temperature = [[current_time, read_temp()]]
+        # Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         t1 = t1+1
         led_t.on()
@@ -257,8 +294,8 @@ def Read_Values():
     while Tend2 < time.time() < Tend3:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        #rv = read_volts()
-        #V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+        # rv = read_volts()
+        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         if button_v.is_pressed:
             V_store = [[current_time, 1]]
         else:
@@ -283,7 +320,7 @@ def Read_Values():
             Temperature = [[current_time, 1]]
             time.sleep(pause_time)
 
-        #Temperature = [[current_time, read_temp()]]
+        # Temperature = [[current_time, read_temp()]]
 
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
@@ -297,8 +334,8 @@ def Read_Values():
         current_time = (round((time.time()-t0), 2))
         print(current_time)
         # Writing the voltage and temperature to each list
-        #rv = read_volts()
-        #V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+        # rv = read_volts()
+        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
         if button_v.is_pressed:
             V_store = [[current_time, 1]]
         else:
@@ -310,7 +347,7 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        #Temperature = [[current_time, read_temp()]]
+        # Temperature = [[current_time, read_temp()]]
 
         t1 = t1+1
         led_t.on()
