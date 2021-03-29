@@ -20,7 +20,7 @@ def k_measure_v():
     return V
 
 
-def k_measure_I():
+def k_measure_i():
     keithley.measure_current()
 
     I = keithley.current

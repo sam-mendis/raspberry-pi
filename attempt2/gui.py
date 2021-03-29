@@ -1,3 +1,4 @@
+from temperature_sensor_code import measure_temp
 from typing import AsyncContexstManager
 import csv
 import array
@@ -117,7 +118,8 @@ def switch_off(n):
 
 
 def read_temp():
-    return 100
+    T = measure_temp()
+    return T
 
 
 def desired_temp():
@@ -126,10 +128,45 @@ def desired_temp():
 
 # The function to measure the voltage
 def measure_volts():
-    switch_on(1)
-    time.sleep(0.5)
+    V = [0, 0, 0, 0, 0, 0]
 
-    return 0.1
+    switch_on(1)
+    time.sleep(0.3)
+    V(0) = k_measure_v()
+    time.sleep(0.5)
+    switch_off(1)
+
+    switch_on(2)
+    time.sleep(0.3)
+    V(1) = k_measure_v
+    time.sleep(0.5)
+    switch_off(2)
+
+    switch_on(3)
+    time.sleep(0.3)
+    V(2) = k_measure_v
+    time.sleep(0.5)
+    switch_off(3)
+
+    switch_on(4)
+    time.sleep(0.3)
+    V(3) = k_measure_v
+    time.sleep(0.5)
+    switch_off(4)
+
+    switch_on(5)
+    time.sleep(0.3)
+    V(4) = k_measure_v
+    time.sleep(0.5)
+    switch_off(5)
+
+    switch_on(6)
+    time.sleep(0.3)
+    V(5) = k_measure_v
+    time.sleep(0.5)
+    switch_off(6)
+
+    return V
 
 
 def set_volts(Input):
@@ -140,7 +177,7 @@ def set_volts(Input):
 
 
 def temp_control(Temp):
-    Temp.actualv(read_temp())
+    Temp.actualv(measure_temp())
     Temp.desiredv(desired_temp())
 
     if Temp.actual < Temp.desired:
@@ -151,42 +188,6 @@ def temp_control(Temp):
         '''switch off heater'''
         # Switching GPIO 6 off
     return Temp.actual
-
-
-# A fucntion to check the ultiprocessing module is working fine
-
-
-def counter_V():
-    t0 = time.time()
-    t = 0
-    while t < (I.desired[3]+I.desired[2] + I.desired[1]+I.desired[0]):
-        led_v.on()
-
-        t = t+1
-
-        pause_time = (t+t0)-time.time()
-        time.sleep(pause_time/2)
-        led_v.off()
-        pause_time = (t+t0)-time.time()
-        time.sleep(pause_time)
-
-
-def read_volts():
-    # Some function to measure the voltage of each cell
-    t0 = time.time()
-
-    V = [0, 0, 0, 0, 0, 0]
-    V[0] = V[0]+1
-    V[1] = V[1]+2
-    V[2] = V[2]+3
-    V[3] = V[3]+4
-    V[4] = V[4]+5
-    V[5] = V[5]+6
-    return V
-
-
-def control_tloop():
-    t0 = time.time()
 
 
 def Read_Values():
@@ -218,50 +219,34 @@ def Read_Values():
     while time.time() < Tend1:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        # rv = read_volts()
-        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
-        if button_v.is_pressed:
-            V_store = [[current_time, 1]]
-        else:
-            V_store = [[current_time, 0]]
+        rv = measure_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
+
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
         with file_V:
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        # Temperature = [[current_time, read_temp()]]
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
-        t1 = t1+1
-        led_t.on()
-
-        pause_time = (t1*(M.desired[0])+t0)-time.time()
-
-        if button_t.is_pressed:
-            led_t.off()
-            time.sleep(pause_time)
-            Temperature = [[current_time, 0]]
-        else:
-            Temperature = [[current_time, 1]]
-            time.sleep(pause_time)
 
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
         with file_T:
             write = csv.writer(file_T)
             write.writerows(Temperature)
+
+        t1 = t1+1
+        pause_time = (t1*(M.desired[0])+t0)-time.time()
+        time.sleep(pause_time)
 
     t1 = 0
     while Tend1 < time.time() < Tend2:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        # rv = read_volts()
-        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
-
-        if button_v.is_pressed:
-            V_store = [[current_time, 1]]
-        else:
-            V_store = [[current_time, 0]]
+        rv = measure_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
 
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
@@ -269,37 +254,24 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        # Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
-        t1 = t1+1
-        led_t.on()
-
-        pause_time = (t1*(M.desired[1])+Tend1)-time.time()
-
-        if button_t.is_pressed:
-            led_t.off()
-            time.sleep(pause_time)
-            Temperature = [[current_time, 0]]
-        else:
-            Temperature = [[current_time, 1]]
-            time.sleep(pause_time)
+        Temperature = [[current_time, read_temp()]]
 
         file_T = open('Temperature_data.csv', 'a+', newline='')
-
         with file_T:
             write = csv.writer(file_T)
             write.writerows(Temperature)
+
+        t1 = t1+1
+        pause_time = (t1*(M.desired[1])+Tend1)-time.time()
+        time.sleep(pause_time)
 
     t1 = 0
     while Tend2 < time.time() < Tend3:
         current_time = (round((time.time()-t0), 2))
         # Writing the voltage and temperature to each list
-        # rv = read_volts()
-        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
-        if button_v.is_pressed:
-            V_store = [[current_time, 1]]
-        else:
-            V_store = [[current_time, 0]]
+        rv = measure_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
 
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
@@ -307,20 +279,7 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        t1 = t1+1
-        led_t.on()
-
-        pause_time = (t1*(M.desired[2])+Tend2)-time.time()
-
-        if button_t.is_pressed:
-            led_t.off()
-            time.sleep(pause_time)
-            Temperature = [[current_time, 0]]
-        else:
-            Temperature = [[current_time, 1]]
-            time.sleep(pause_time)
-
-        # Temperature = [[current_time, read_temp()]]
+        Temperature = [[current_time, read_temp()]]
 
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
@@ -328,18 +287,18 @@ def Read_Values():
         with file_T:
             write = csv.writer(file_T)
             write.writerows(Temperature)
+
+        t1 = t1+1
+        pause_time = (t1*(M.desired[2])+Tend2)-time.time()
+        time.sleep(pause_time)
 
     t1 = 0
     while Tend3 < time.time() < Tend4:
         current_time = (round((time.time()-t0), 2))
         print(current_time)
         # Writing the voltage and temperature to each list
-        # rv = read_volts()
-        # V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
-        if button_v.is_pressed:
-            V_store = [[current_time, 1]]
-        else:
-            V_store = [[current_time, 0]]
+        rv = measure_volts()
+        V_store = [[current_time, rv[0], rv[1], rv[2], rv[3], rv[4], rv[5]]]
 
         # Storing Data on Voltage File
         file_V = open('Voltage_data.csv', 'a+', newline='')
@@ -347,21 +306,7 @@ def Read_Values():
             write = csv.writer(file_V)
             write.writerows(V_store)
 
-        # Temperature = [[current_time, read_temp()]]
-
-        t1 = t1+1
-        led_t.on()
-
-        pause_time = (t1*(M.desired[3])+Tend3)-time.time()
-
-        if button_t.is_pressed:
-            led_t.off()
-            time.sleep(pause_time)
-            Temperature = [[current_time, 0]]
-        else:
-            Temperature = [[current_time, 1]]
-            time.sleep(pause_time)
-
+        Temperature = [[current_time, read_temp()]]
         # Storing Data on Temperature File
         file_T = open('Temperature_data.csv', 'a+', newline='')
 
@@ -369,12 +314,16 @@ def Read_Values():
             write = csv.writer(file_T)
             write.writerows(Temperature)
 
+        t1 = t1+1
+        pause_time = (t1*(M.desired[3])+Tend3)-time.time()
+        time.sleep(pause_time)
+
 
 # For multiprocessing to work, the functions I am calling can not have input arguments
 if __name__ == '__main__':
     p1 = Process(target=Read_Values)
     p1.start()
-    p2 = Process(target=counter_V)
+    p2 = Process(target=temp_control)
     p2.start()
     p1.join()
     p2.join()
