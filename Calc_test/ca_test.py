@@ -5,7 +5,7 @@ import csv
 
 keithley = Keithley2400("GPIB::1")
 keithley.beep(100, 3)
-
+time.sleep(10)
 "Running Calcium Voltage measurements"
 
 "Input desired current in Amps"
