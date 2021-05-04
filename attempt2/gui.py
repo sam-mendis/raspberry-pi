@@ -31,6 +31,21 @@ time.sleep(10)
 # Temperature sesnor is goig to be connected to GPIO 4
 
 
+'''
+To input the starting parameters of the test, use the class parameters and change the actual values of A (Atmopsheric Temp), 
+t(Time of the test) and g (Gas 1 and 2 percentages).
+
+
+To control the measurement intervals use the parameters class - variable M.
+To control the temperature, use the parameters class - variable T
+To control the Voltage, use the parameters class - variable V
+
+The voltage and temperature measurements will be written to 2 seperate CSV files, before the start of the test the date 
+and time of the test will be automatically written into the CSV files located in this folder. The voltage will be recorded
+in Volts, the temeperature in degrees Celcius and the time in seconds. For further information look at the example test in 
+each of the two files.  '''
+
+
 '''Sorting out date and time'''
 date_time = datetime.now()
 Date = '%s/%s/%s' % (date_time.day, date_time.month, date_time.year)
